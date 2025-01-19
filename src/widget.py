@@ -9,9 +9,10 @@ full_path = os.path.join(base_path, "src", "widget.py")
 with open(full_path, "r") as file:
     print(file.read())
 
-#get_mask_account
+
 def get_mask_account_card(string: str) -> str:
     """Функция возвращает маскирующие счета и карты"""
+
     if "Счет" in string:
         account = string[-20:]
         return string[:-20] + get_mask_account(account)
