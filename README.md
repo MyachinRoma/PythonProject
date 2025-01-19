@@ -12,29 +12,50 @@ pip install -r requirements.txt
 ## Использование
 # Примеры использования функций:
 
-from src.masks import get_mask_account , get_mask_card_number​​  
-
 # Пример использования get_mask_account 
-transactions_account  = ( "78236498532679584236" )
+print(get_mask_account("78236498532679584236"))
 
 # Пример использования get_mask_card_number 
-transactions_card_number  =  "Visa Platinum ['7000792289606361']" 
-transactions_card_number  =  "Счет ['73654108430135874305']"
-
-from src.widget import get_data
+print(get_mask_account_card("Счет 12345678901234567890"))
+print(get_mask_account_card("Visa 1234567890123456"))
 
 # Пример использования get_data 
-print ( get_data ( "2024-03-11T02:26:18.671407" ))
+print(get_data("2024-03-11T02:26:18.671407"))
 
-from src.processing import filter_by_state, sort_by_date
-
-# Пример использования 
-transactions = [
-    {'id': 41428829, 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'},
-    {'id': 59402872, 'state': 'CANCELLED', 'date': '2018-09-17T21:27:25.241241'}
-]
+# Пример использования filter_by_state
+filter_by_state(
+        [
+            {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
+            {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
+            {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
+            {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
+        ]
+    )
+)
 
 # Пример использования sort_by_date 
-sorted_transactions  =  sort_by_date ( транзакции )
+print(sort_by_date([{"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
+            {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
+            {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
+            {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},]))
+
+# Примеры тестирования функций, производится в соответствующих модулях по названиям этих модулей:
+# Соответственно get_mask_account и get_mask_card_number из модуля masks.py,
+# тестируется в модуле tests_masks.
+def test_get_mask_card_number(number, new_string):
+    assert get_mask_card_number(number) == new_string
+def test_get_mask_account(numbers, new_strings):
+    assert get_mask_account(numbers) == new_strings
+# get_mask_account_card и get_data из модуля widget.py,
+# тестируется в модуле tests_widget.
+def test_get_mask_account_card(number, new_string):
+    assert get_mask_account_card(number) == new_string
+def test_get_data(data, new_data):
+    assert get_data(data) == new_data
+# filter_by_state и sort_by_date из модуля processing.py,
+# тестируется в модуле tests_processing.
+
+
+
 ## Вклад
 Если вы хотите внести свой вклад, создайте вилку репозитория и отправьте пул-реквест.
