@@ -55,7 +55,3 @@ def test_get_data(data, new_data):
 # filter_by_state и sort_by_date из модуля processing.py,
 # тестируется в модуле tests_processing.
 
-
-
-## Вклад
-Если вы хотите внести свой вклад, создайте вилку репозитория и отправьте пул-реквест.
