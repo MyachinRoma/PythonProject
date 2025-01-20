@@ -2,9 +2,8 @@ import os
 
 from src.masks import get_mask_account, get_mask_card_number
 
-base_path = "C:\\Users\\Acer\\PycharmProjects\\PythonProject"
-
-full_path = os.path.join(base_path, "src", "widget.py")
+base_path = os.path.abspath(os.path.dirname(__file__))
+full_path = os.path.join(base_path, "widget.py")
 
 with open(full_path, "r") as file:
     print(file.read())

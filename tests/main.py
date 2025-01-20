@@ -4,9 +4,8 @@ from src.masks import get_mask_account, get_mask_card_number
 from src.processing import filter_by_state, sort_by_date
 from src.widget import get_data, get_mask_account_card
 
-base_path = "C:\\Users\\Acer\\PycharmProjects\\PythonProject"
-
-full_path = os.path.join(base_path, "tests", "main.py")
+base_path = os.path.abspath(os.path.dirname(__file__))
+full_path = os.path.join(base_path, "main.py")
 
 with open(full_path, "r") as file:
     print(file.read())
