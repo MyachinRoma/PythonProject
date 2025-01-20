@@ -54,4 +54,7 @@ def test_get_data(data, new_data):
     assert get_data(data) == new_data
 # filter_by_state и sort_by_date из модуля processing.py,
 # тестируется в модуле tests_processing.
-
+def test_filter_by_state(data, state, expected):
+    assert filter_by_state(data, state) == expected
+def test_sort_by_date(data, reverse, expected):
+    assert sort_by_date(data, reverse) == expected
