@@ -27,3 +27,10 @@ def test_get_mask_card_number(number, new_string):
 )
 def test_get_mask_account(numbers, new_strings):
     assert get_mask_account(numbers) == new_strings
+
+
+def test_get_mask_card_number_wrong():
+    assert get_mask_card_number("Привет") == "Данные не верны"
+
+def test_get_mask_account_wrong():
+    assert get_mask_account("Привет") == "Данные не верны"
