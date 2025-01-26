@@ -1,18 +1,17 @@
 import os
 
-base_path = "C:\\Users\\Acer\\PycharmProjects\\PythonProject"
-
-full_path = os.path.join(base_path, "src", "processing.py")
+base_path = os.path.abspath(os.path.dirname(__file__))
+full_path = os.path.join(base_path, "processing.py")
 
 with open(full_path, "r") as file:
     print(file.read())
 
 
-def filter_by_state(dictionary: list) -> list:
+def filter_by_state(dictionary: list, state: str = "EXECUTED") -> list:
     """Выход функции со статусом по умолчанию 'EXECUTED'"""
     new_dictionary = []
     for i in dictionary:
-        if i["state"] == "EXECUTED":
+        if i["state"] == state:
             new_dictionary.append(i)
     return new_dictionary
 
