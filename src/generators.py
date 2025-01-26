@@ -10,7 +10,7 @@ with open(full_path, "r") as file:
 def filter_by_currency(transactions, currency):
     """Функция принимает на вход список со словарем и возвращает id операции"""
     for transaction in transactions:
-        if transaction["operation_Amount"]["currency"]["name"] == currency:
+        if transaction["operationAmount"]["currency"]["name"] == currency:
             yield transaction
 
 
