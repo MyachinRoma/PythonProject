@@ -5,3 +5,6 @@ my_function called with args: (3, 8), kwargs:{}. Result: 11
 my_function called with args: (3, 8), kwargs:{}. Result: 11
 my_function called with args: (1, 2), kwargs:{}. Result: 3
 my_function called with args: (0, 2), kwargs:{}. Result: 2
+my_function called with args: (3, 8), kwargs:{}. Result: 11
+my_function called with args: (1, 2), kwargs:{}. Result: 3
+error_function error: An error occurred. Inputs:(1, 2), {}
