@@ -4,10 +4,10 @@ from typing import Any
 import requests
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv('.env')
 values = os.getenv("PASSWORD")
-keys = os.getenv("API_KEY")
-headers = {keys: values}
+API_KEY = os.getenv("API_KEY")
+headers = {API_KEY: values}
 
 
 def currency_conversion(transaction: Any) -> Any:
