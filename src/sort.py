@@ -6,7 +6,7 @@ from src.utils import list_transactions
 
 
 def list_transactions_sort_search(list_txn: List[dict], search_bar: str) -> List[dict]:
-    """Функция, которая возвращает список словарей, у которых в описании есть строка поиска вводимая пользователем"""
+    """Функция, которая возвращает список словарей, у которых в описании есть строка поиска, вводимая пользователем"""
     new_list_transactions = []
     for transactions in list_txn:
         if "description" in transactions and re.search(search_bar, transactions["description"], flags=re.IGNORECASE):

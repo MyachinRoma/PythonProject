@@ -11,7 +11,7 @@ def filter_by_state(dictionary: list, state: str = "EXECUTED") -> list:
     """Выход функции со статусом по умолчанию 'EXECUTED'"""
     new_dictionary = []
     for i in dictionary:
-        if i["state"] == state:
+        if i.get("state") == state:
             new_dictionary.append(i)
     return new_dictionary
 
