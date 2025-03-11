@@ -5,7 +5,7 @@
 ## Установка
 1. Склонируйте репозиторий на локальную машину:
 ```
-gh repo clone MyachinRoma/PythonProject
+https://github.com/MyachinRoma/PythonProject.git
 
 2. Установите необходимые зависимости:
 ```
