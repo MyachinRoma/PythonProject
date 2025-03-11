@@ -5,8 +5,8 @@
 ## Установка
 1. Склонируйте репозиторий на локальную машину:
 ```
-git clone https://github.com/kashin152/myproject.git
-s``
+gh repo clone MyachinRoma/PythonProject
+
 2. Установите необходимые зависимости:
 ```
 pip install -r requirements.txt
